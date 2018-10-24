@@ -13,7 +13,7 @@ This is a Maven project which contains simple assignments for playing around wit
 It should not matter much in which order you start, but this is the recommended one:
 
 1. `models.kt` - introduction to classes
-2. `collections.kt` - introduction to collections
+2. `collections.kt` - introduction to collections (it uses classes from the `models.kt` file)
 3. `casting.kt` - smart casting
 4. `various.kt` - if there's a spare time
 

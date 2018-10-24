@@ -17,6 +17,7 @@ package koans
  *  - https://kotlinlang.org/docs/reference/operator-overloading.html#increments-and-decrements
  *  - https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/require.html#require
  *
+ * Note: This is the first assignment, since these classes are used in the `collections.kt` assignment.
  */
 
 data class InvoicingPeriod(val month: Int, val year: Int)
@@ -26,13 +27,18 @@ data class Project(val name: String, val invoices: List<Invoice>)
 
 fun main(args: Array<String>) {
     TODO()
-    // Uncomment and run
+    // Uncomment and run. All of these should return true (or pass without exception)
+//    println("First part:")
 //    println(InvoicingPeriod(1, 2018) < InvoicingPeriod(10, 2018))
 //    println(InvoicingPeriod(1, 2018) == InvoicingPeriod(1, 2018))
 //    println(InvoicingPeriod(10, 2018) > InvoicingPeriod(1, 2018))
 //    println(InvoicingPeriod(5, 2018) in InvoicingPeriod(1, 2018)..InvoicingPeriod(12, 2018))
+//
+//    println("Second part:")
 //    var start = InvoicingPeriod(12, 2018)
 //    println(++start == InvoicingPeriod(1, 2019))
+//
+//    println("Third part")
 //    try {
 //        println(InvoicingPeriod(-5, 2018))
 //    } catch (illegalArgumentException: IllegalArgumentException) {

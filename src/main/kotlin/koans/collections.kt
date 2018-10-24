@@ -55,10 +55,13 @@ class TestData {
 }
 
 fun main(args: Array<String>) {
+    println("calculateRevenuePerCustomerAndMonth output:")
     println(0 == TestData.customers.calculateRevenuePerCustomerAndMonth(10)["Westside Chocolate Factory"])
     println(13_000_000 == TestData.customers.calculateRevenuePerCustomerAndMonth(9)["Westside Chocolate Factory"])
     println(10_000_000 == TestData.customers.calculateRevenuePerCustomerAndMonth(8)["Westside Chocolate Factory"])
     println(11_000 + 450_000 == TestData.customers.calculateRevenuePerCustomerAndMonth(9)["Arnie's Pizza Palace"])
     println(430_000_000 == TestData.customers.calculateRevenuePerCustomerAndMonth(8)["Granny's little bakery"])
+
+    println("findMostProfitableProject output:")
     println("European Market Expansion" == TestData.customers.findMostProfitableProject()!!.name)
 }

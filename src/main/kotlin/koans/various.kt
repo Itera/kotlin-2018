@@ -6,6 +6,13 @@ import java.util.*
 
 /**
  * Key represents month, value is list of days in month when there's a holiday
+ *
+ * For instance:
+ * September: 1st, 15th
+ * October: 30th
+ * November: 1st
+ *
+ * etc.
  */
 typealias HolidaysPerMonths = Map<Int, List<Int>>
 
@@ -20,5 +27,6 @@ fun main(args: Array<String>) {
             Pair(9, listOf(1, 15)), Pair(10, listOf(30))
     )
 
+    // This should return true
     println(date.isHoliday(holidaysPerMonths))
 }
