@@ -26,7 +26,7 @@ data class Customer(val name: String, val projects: List<Project>)
 data class Project(val name: String, val invoices: List<Invoice>)
 
 fun main(args: Array<String>) {
-    TODO()
+    TODO() // This should be commented out when above is implemented
     // Uncomment and run. All of these should return true (or pass without exception)
 //    println("First part:")
 //    println(InvoicingPeriod(1, 2018) < InvoicingPeriod(10, 2018))
