@@ -9,12 +9,21 @@ package koans
  *
  * Return a Map, where key is a customer name and the value is the sum.
  */
-fun List<Customer>.calculateRevenuePerCustomerAndMonth(month: Int): Map<String, Int> = TODO()
+fun List<Customer>.calculateRevenuePerCustomerAndMonth(month: Int): Map<String, Int> = this.map { customer ->
+    Pair(
+        customer.name,
+        customer.projects
+            .flatMap { it.invoices }
+            .asSequence()
+            .filter { it.paid && it.invoicingPeriod.month == month }
+            .sumBy { it.price })
+}.toMap()
 
 /**
  * This function returns the project, which has the highest sum of all paid invoices
  */
-fun List<Customer>.findMostProfitableProject(): Project? = TODO()
+fun List<Customer>.findMostProfitableProject(): Project? = this
+    .flatMap { it.projects }.maxBy { project -> project.invoices.sumBy { it.price } }
 
 class TestData {
     companion object {

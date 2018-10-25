@@ -1,6 +1,7 @@
 package koans
 
 import java.lang.IllegalArgumentException
+import kotlin.math.exp
 
 /**
  * Implement and rewrite the following example:
@@ -19,14 +20,13 @@ import java.lang.IllegalArgumentException
 
 fun eval(expr: Expr): Int =
         when (expr) {
-            is Num -> TODO()
-            is Sum -> TODO()
-            else -> throw IllegalArgumentException()
+            is Num -> expr.value
+            is Sum -> eval(expr.left) + eval(expr.right)
         }
 
-interface Expr
-class Num(val value: Int) : Expr
-class Sum(val left: Expr, val right: Expr) : Expr
+sealed class Expr
+class Num(val value: Int) : Expr()
+class Sum(val left: Expr, val right: Expr) : Expr()
 
 fun main(args: Array<String>) {
     println(eval(Num(1)) == 1)

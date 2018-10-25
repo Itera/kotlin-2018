@@ -1,6 +1,7 @@
 package koans
 
 import java.time.LocalDate
+import java.time.ZoneId
 import java.time.ZoneOffset
 import java.util.*
 
@@ -19,7 +20,11 @@ typealias HolidaysPerMonths = Map<Int, List<Int>>
 /**
  * Implement this extension function on Date, which will determine whether it is a holiday
  */
-fun Date.isHoliday(holidaysPerMonths: HolidaysPerMonths): Boolean = TODO()
+fun Date.isHoliday(holidaysPerMonths: HolidaysPerMonths): Boolean {
+    val localDate = LocalDate.from(this.toInstant().atZone(ZoneId.systemDefault()))
+
+    return holidaysPerMonths[localDate.monthValue]?.contains(localDate.dayOfMonth) ?: false
+}
 
 fun main(args: Array<String>) {
     val date = Date.from(LocalDate.of(2018, 9, 1).atStartOfDay().toInstant(ZoneOffset.UTC))
